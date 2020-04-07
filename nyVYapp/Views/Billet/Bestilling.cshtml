@@ -1,0 +1,74 @@
+﻿
+@model nyVYapp.Models.Billet
+
+<h2>Bestilling</h2>
+<img src="@Url.Content("~/Content/Img/vy.logo.png")" />
+<form action="/Billet/Bestilling" method="post">
+    <table class="table">
+        <tr>
+            <td>ReiseFra</td>
+            <td>
+                <select name="reiseFra" class="form-control">
+                    <option value="Asker">Asker</option>
+                    <option value="Drammen">Drammen</option>
+                    <option value="Oslo">Oslo</option>
+                </select>
+            </td>
+      
+            <td>ReiseTil</td>
+            <td>
+                <select name="reiseTil" class="form-control">
+                    <option value="Asker">Asker</option>
+                    <option value="Drammen">Drammen</option>
+                    <option value="Oslo">Oslo</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>Dato</td>
+            <td><input type="date" name="dato" /></td>
+
+            <td>Tid</td>
+            <td>
+                <select name="tid" class="form-control">
+                    <option value="10:00">10:00</option>
+                    <option value="10:30">10:30</option>
+                    <option value="11:00">11:00</option>
+                    <option value="11:30">11:30</option>
+                    <option value="12:30">12:30</option>
+                    <option value="12:00">12:30</option>
+                </select>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>Reisende</td>
+            <td class="radio">
+                <input type="radio" name="reisende" value="Voksen">Voksen<br>
+                <input type="radio" name="reisende" value="Student">Student <br> <td>
+                <input type="radio" name="reisende" value="Barn">Barn<br>
+                <input type="radio" name="reisende" value="Honnør">Honnør<br>
+
+            </td>
+        </tr>
+        <tr>
+            <td>Antall</td>
+            <td><input type="text" name="antall" /></td>
+        </tr>
+        <tr>
+            <td>Navn</td>
+            <td><input type="text" name="navn" /></td>
+        </tr>
+        <tr>
+            <td>Epost</td>
+            <td><input type="email" name="epost" /></td>
+        </tr>
+        <tr>
+            <td>Telefonnr</td>
+            <td><input type="text" name="telefonnr" /></td>
+        </tr>
+    </table>
+    <input type="submit" value="Bestill" name="bestill" class="btn btn-primary" />
+    <a href="/billet/Index" class="btn btn-info">Mine Billetter</a>
+</form>
+

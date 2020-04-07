@@ -1,0 +1,78 @@
+﻿
+@model List<nyVYapp.Models.Billet>
+
+<h2>Billetter</h2>
+<img src="@Url.Content("~/Content/Img/vy.logo.png")" />
+<p>
+    <a href="/Billet/Bestilling"></a>
+</p>
+<table class="table">
+    <tr>
+        <th>
+            ReiseFra
+        </th>
+        <th>
+            ReiseTil
+        </th>
+        <th>
+            Tid
+        </th>
+        <th>
+            Dato
+        </th>
+        <th>
+            Reisende
+        </th>
+        <th>
+            Antall
+        </th>
+        <th>
+            Navn
+        </th>
+        <th>
+            Epost
+        </th>
+        <th>
+            Telefonnr
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @item.reiseFra
+            </td>
+            <td>
+                @item.reiseTil
+            </td>
+            <td>
+                @item.dato
+            </td>
+             <td>
+                @item.tid
+            </td>
+            <td>
+                @item.reisende
+            </td>
+            <td>
+                @item.antall
+            </td>
+            <td>
+                @item.navn
+            </td>
+            <td>
+                @item.epost
+            </td>
+            <td>
+                @item.telefonnr
+            </td>
+            <td>
+                <a href="/billet/slett?Bid=@item.Bid" class="btn btn-danger">Avbryt</a>
+            </td>
+        </tr>
+    }
+
+</table>
+<a href="/Billet/Bestilling/" class="btn btn-primary">Bestilling</a>
